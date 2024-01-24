@@ -3,10 +3,10 @@ products_data = [
     {"product_name": "Product B", "cost_price": 3.0, "sell_price": 6.0, "inventory": 150},
     {"product_name": "Product C", "cost_price": 2.5, "sell_price": 4.0, "inventory": 200},
 ]
-def Calc_profit(product_data):
+def Calc_profit(data):
     profit = 0
     
-    for product in product_data:
+    for product in data:
         cost_price = product["cost_price"]
         sell_price = product["sell_price"]
         inventory = product["inventory"]
