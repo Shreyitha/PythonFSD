@@ -1,20 +1,16 @@
 def calculate_total_profit(products_data):
-    
     total_profit = 0
 
-    
     for product in products_data:
-    
-        profit = (product["sell_price"] - product["cost_price"]) * product["inventory"]
+        cost_price = product["cost_price"]
+        sell_price = product["sell_price"]
+        inventory = product["inventory"]
 
-        
-        total_profit += profit
+        profit_per_unit = sell_price - cost_price
+        total_profit += profit_per_unit * inventory
 
-    
-    rounded_total_profit = round(total_profit)
+    return round(total_profit)
 
-    
-    return rounded_total_profit
 
 products_data = [
     {"product_name": "Product A", "cost_price": 5.5, "sell_price": 8.5, "inventory": 100},
@@ -22,5 +18,6 @@ products_data = [
     {"product_name": "Product C", "cost_price": 2.5, "sell_price": 4.0, "inventory": 200},
 ]
 
-result = calculate_total_profit(products_data)
-print(f"Total Profit: ${result}")
+
+total_profit = calculate_total_profit(products_data)
+print(f"Total profit: ${total_profit}")
