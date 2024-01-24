@@ -13,7 +13,7 @@ password_manager = PasswordManager()
 
 try:
     user_password = password_manager.get_password()
-    print("Password entered:", user_password)  # For demonstration, remove in production
+    print("Password entered:", user_password)  # For demo
 
 except KeyboardInterrupt:
     print("\nPassword input was interrupted.")
