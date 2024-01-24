@@ -11,9 +11,9 @@ def Calc_profit(product_data):
         sell_price = product["sell_price"]
         inventory = product["inventory"]
         
-        profit = (sell_price - cost_price) * inventory
-        
-        return round(profit)
+        profit_per_unit = sell_price - cost_price
+        profit += profit_per_unit * inventory
+    return round(profit)
     
 total_profit = Calc_profit(products_data)
 print("Total Profit is", total_profit)
