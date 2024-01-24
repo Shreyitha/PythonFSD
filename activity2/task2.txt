@@ -1,0 +1,20 @@
+Hey everyone! here is the code with a lack of security for password input. Currently, when users enter their password, it gets displayed on the screen, which is not ideal for security.
+
+class PasswordManager:
+    def get_password(self):
+        try:
+            password = input("Enter your password: ")
+            return password
+
+        except Exception as e:
+            print(f"An unexpected error occurred: {e}")
+password_manager = PasswordManager()
+
+try:
+    user_password = password_manager.get_password()
+    print("Password entered:", user_password)
+
+except KeyboardInterrupt:
+    print("\nPassword input was interrupted.")
+except Exception as e:
+    print(f"An unexpected error occurred: {e}")
