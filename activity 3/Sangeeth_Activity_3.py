@@ -35,7 +35,7 @@ with open("Sangeeth_Report.txt", 'w') as result:
         result.write('Highest Grade: %s (%s)\n' % (key, value))
     for key, value in min_dict.items():  
         result.write('Lowest Grade: %s (%s)\n' % (key, value))    
-result.close(0        
+result.close()
 
 
 
