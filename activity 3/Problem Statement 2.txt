@@ -1,0 +1,21 @@
+Problem Statement2: Student Grades Analysis
+
+You are tasked with creating a Python program for analyzing student grades. The program should read a text file containing student names and their corresponding grades, perform some analysis, and then generate a report.
+
+Program Requirements:
+
+-Read the contents of "grades.txt" and store the data in a suitable data structure.
+-Calculate the average grade for all students.
+-Identify and display the student with the highest and lowest grades.
+-Generate a new text file named "report.txt" with the following format:
+
+	Average Grade: XX.XX
+	Highest Grade: StudentName (XX)
+	Lowest Grade: StudentName (XX)
+
+-Also, Implement proper error handling for the following scenarios:
+	*The "grades.txt" file does not exist.
+	*The file format is incorrect (e.g., missing grades or non-numeric grades).
+	*Any other potential issues that might occur during file handling or data analysis.
+
+For the given "grades.txt" file, the "report.txt" file should be generated with the calculated average, highest, and lowest grades.
