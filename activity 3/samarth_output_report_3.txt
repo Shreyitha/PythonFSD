@@ -1,0 +1,3 @@
+Average Grade: 86.50
+Highest Grade(s): Yasmine (99), Yara (99)
+Lowest Grade(s): Zane (74), Zack (74)
