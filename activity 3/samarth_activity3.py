@@ -18,7 +18,6 @@ def calculate_average(grades):
 def analyze_grades(grades):
     if not grades:
         return None, None
-
     highest_grade = max(grades, key=lambda x: int(x[1]))[1]
     lowest_grade = min(grades, key=lambda x: int(x[1]))[1]
 
@@ -52,21 +51,15 @@ def write_report_to_file(report, output_file="report.txt"):
 
 def main():
     file_path = "/content/sample_data/grades.txt"
-
     grades = read_grades_file(file_path)
-
-
     for student, grade in grades:
         if not grade.isdigit():
             print(f"Error: Invalid grade for {student}. Grades must be numeric.")
             sys.exit(1)
 
     average_grade = calculate_average(grades)
-
-    highest_students, lowest_students = analyze_grades(grades)
-    
+    highest_students, lowest_students = analyze_grades(grades)  
     report = generate_report(average_grade, highest_students, lowest_students)
-
     write_report_to_file(report)
 
 if __name__ == "__main__":
