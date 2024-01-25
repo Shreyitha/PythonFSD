@@ -25,6 +25,7 @@ for i in dict.items():
         max_dict[i[0]]=i[1]
     elif i[1]==min:
         min_dict[i[0]]=i[1]
+ file.close()       
 
 
 #writing the results to result.txt
@@ -34,6 +35,7 @@ with open("Sangeeth_Report.txt", 'w') as result:
         result.write('Highest Grade: %s (%s)\n' % (key, value))
     for key, value in min_dict.items():  
         result.write('Lowest Grade: %s (%s)\n' % (key, value))    
+result.close(0        
 
 
 
