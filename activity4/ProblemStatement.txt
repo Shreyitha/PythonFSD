@@ -1,0 +1,6 @@
+Implement server and client model to establish a connection between them and proceed with exchanging data. The steps can be considered like this.
+
+1. Python socket server program executes at first and wait for any request
+2. Python socket client program will initiate the conversation at first.
+3. Then server program will response accordingly to client requests.
+4. Client program will terminate if user enters “bye” message. Server program will also terminate when client program terminates, this is optional and we can keep server program running indefinitely or terminate with some specific command in client request.
