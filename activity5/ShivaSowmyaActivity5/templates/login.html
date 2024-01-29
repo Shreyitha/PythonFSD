@@ -1,0 +1,30 @@
+<html>
+    <body>
+        <center>
+            <h1 style= "color: aqua;font-family: fantasy;">Login Page</h1>
+
+            {% if error == True %}
+                <h4>Invalid Login Credentials</h4>
+            {% endif %}
+
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul>
+                    {% for message in messages  %}
+                            <li>{{message}} </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            {% endwith %}
+
+
+        <form action="/checklogin" method="post">
+            <label for="username">Username:</label><br>
+            <input type="text" name="username" placeholder="enter username" id="username"><br><br>
+            <label for="password">Password:</label><br>
+            <input type="password" name="password" placeholder="enter password" id="password"/><br><br>
+            <button name="login" type="submit">login</button>
+        </form>
+        </center>
+    </body>
+</html>
