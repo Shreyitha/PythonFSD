@@ -24,6 +24,7 @@ def dashboard():
       username = session["name"]
       return render_template("dashboard.html",name=username)
     else:
+        flash("Invalid username or password")
         return redirect(url_for("ind"))
 
 @app.route("/logout")
