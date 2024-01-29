@@ -5,7 +5,7 @@ server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # Bind the socket to a specific address and port
 host = '127.0.0.1'
-port = 12345
+port = 56789
 server_socket.bind((host, port))
 
 # Listen for incoming connections
