@@ -1,0 +1,18 @@
+Write a Python program that scrapes the names and prices of the best-selling books from the Books to Scrape website and saves them in a CSV file.
+
+The program should:
+
+1 Import the requests and BeautifulSoup libraries
+2 Define the URL of the Books to Scrape website as a variable
+3 Send a GET request to the URL and store the response object
+4 Check if the status code of the response is 200 (OK)
+5 Parse the HTML content of the response using BeautifulSoup and specify the parser as ‘html.parser’
+6 Find all the book elements using the class name ‘product_pod’
+7 Loop through each book element and extract the name and price using the appropriate tag names and attributes
+8 Store the extracted data in a list of dictionaries
+9 Import the csv library and open a new CSV file in write mode
+10 Create a csv writer object and write the header row with the column names
+11 Write the data rows using the writerow method
+12 Close the CSV file
+
+The website you want to get the books from is http://books.toscrape.com/
