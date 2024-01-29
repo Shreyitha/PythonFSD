@@ -5,7 +5,7 @@ client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # Connect to the server's address and port
 host = '127.0.0.1'
-port = 12345
+port = 56789
 client_socket.connect((host, port))
 
 while True:
