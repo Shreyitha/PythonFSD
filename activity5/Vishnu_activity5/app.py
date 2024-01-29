@@ -20,7 +20,7 @@ def loginverify():
 
 @app.route("/dashboard")
 def dashboard():
-    if "name" in session and session["name"] != None:
+    if "name" in session and session["name"] != None and session["name"] != "":
       username = session["name"]
       return render_template("dashboard.html",name=username)
     else:
