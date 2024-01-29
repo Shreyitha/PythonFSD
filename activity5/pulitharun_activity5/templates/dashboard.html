@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Dashboard</h1>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+        {% for message in messages  %}
+            <div><b>{{message}}</b> </div>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+    <p><b>Hello {{username}}</b> </p>
+    <button onclick="like()">like</button>
+    <script>
+    function like() {
+               alert("Liked the Dashboard!");
+       }
+    </script>
+    <p style="text-align: left;"> <a href="/logout">Log out</a></p>
+    
+    
+
+</body>
+</html>
