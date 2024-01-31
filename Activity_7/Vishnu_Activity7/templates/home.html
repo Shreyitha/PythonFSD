@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLASK ONLINE CALCULATOR</title>
+</head>
+<body>
+    <center>
+        <br>
+        
+        {% with flashes = get_flashed_messages()  %}
+        {% if flashes %}        
+        {% for i in  flashes %}
+        {{i}}
+        {% endfor %}
+        {% endif %}    
+        {% endwith %}
+            
+        <br><br><br>
+        <h3>WELCOME TO FLASK ONLINE CALCULATOR</h3>
+        <pre>Calculate all basic arithmetic operations easily with this calculator!!</pre>
+        <br>
+    <form action="/calculator" method="post">
+        <label>Select Operation</label>   <select name="OPERATOR">
+            <option value="">--select--</option>
+            <option value="+">Addition</option>
+            <option value="-">Subtraction</option>
+            <option value="-">Multiplication</option>
+            <option value="/">Division</option>
+        </select><br><br>
+        <label>First Number</label>   <input type="text" autocomplete="off" placeholder="Enter First Number" id="num1" name="NUM1"/><br><br>
+        <label>Second Number</label>   <input type="text" autocomplete="off" placeholder="Enter Second Number" id="num2" name="NUM2"/><br><br>
+        <button type="submit">Calculate</button>
+    </form>
+    </center>
+</body>
+</html>
