@@ -1,0 +1,8 @@
+Create a simple web application using Flask that functions as a basic calculator. Users should be able to perform basic arithmetic operations (addition, subtraction, multiplication, division).
+
+1. Display a welcome message and a brief description of the calculator.
+2. Include a form with input fields for two numbers and a dropdown/select menu for selecting the operation (addition, subtraction, multiplication, division).
+3. Add a "Calculate" button to submit the form.
+4. Process the form submission on the server side and perform the selected arithmetic operation.
+5. Display the result on a new page along with the input values and the chosen operation.
+6. Implement proper error handling to check for invalid inputs (non-numeric values, division by zero, etc.)
