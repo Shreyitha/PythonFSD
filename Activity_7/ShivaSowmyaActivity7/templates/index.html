@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calulator</title>
+  </head>
+  <style>
+    #desc {
+         border: 5px solid yellow;
+         margin-left: 30%;
+         margin-right: 30%;
+    }
+    button{color:black;block-size: 1cm;font-family: cursive;font-size: 70%;background-color: yellow;}
+    table{border-radius: 5%;background-color:skyblue;}
+    td{font-family: cursive;}
+    h3{font-family: cursive;}
+  </style>
+  <body>
+    <center>
+        <h1 style="color: aqua;font-family: cursive;">Calculator</h1><br>
+        <center><div id="desc">
+           <p style="font-family: Arial, Helvetica, sans-serif;">This calculator performs addition, subtraction,product and division of two numbers</p>
+        </div></center>
+        
+        {% if error==True%}
+        <br><h3>enter valid data</h3><br>
+        {%endif%}
+       <br> <div >
+            <form action="/checkdata" method="post">
+                <table border="1" >
+                    <tr>
+                        <td><label for="num1">Num 1:</label></td>
+                        <td><input type="text" placeholder="Enter a number" id="number" name="num1"></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="num2">Num 2:</label></td>
+                        <td><input type="text" placeholder="Enter a number" id="number" name="num2"></td>
+                    </tr>
+                    <tr>
+                        <td align='center' id="fnt">Operation:</td>
+                        <td>
+                            <select name="op">
+                                <option value="+" align="center">addition</option>
+                                <option value="-" align="center">subtraction</option>
+                                <option value="*" align="center">multiplication</option>
+                                <option value="/" align="center">division</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+                <br><br>
+                <h1><button name="calc" type="submit" >Calculate</button></h1>
+            </form>
+          </table>
+        </div>
+    </center>
+    <script>
+
+    </script>
+  </body>
+</html>
