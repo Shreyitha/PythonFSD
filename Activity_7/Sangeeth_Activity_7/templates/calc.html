@@ -1,0 +1,38 @@
+<html>
+    <title> Online Calculator</title>
+    <body>
+        <div>
+        <p><h3>Welcome to our Calculator App powered by Flask! Say goodbye to complex calculations and embrace the simplicity. Whether it's work,<br> school, or everyday math, our user-friendly interface and efficient Flask backend ensure a smooth and enjoyable experience. Dive into <br>a world where precision meets simplicity, and let our app make your math tasks a breeze.</h3><br><center><strong><h3>Welcome aboard!</h3></strong</center></p>
+        </div>
+        <div>
+        <center>
+        <form action="/calc-submit" method="post">
+            <input type="number" name="num1" id="num1" placeholder="Enter the first number"><br>
+            <input type="number" name="num2" id="num2" placeholder="Enter the second number"><br>
+            <select id="operation" name="operation">
+                <option value=""  disabled selected>Choose your operation</option>
+                <option value="addition"> Addition</object>
+                <option value="subtraction"> Subtraction</object>
+                <option value="multiplication"> Multiplication</object>
+                <option value="division"> Division</object>
+            </select><br>
+            <input type="submit" value="Calculate"> 
+        </form>
+
+        {% if error== True %}
+            <h3> Cannot divide a number by zero <h3>
+        {% endif %}
+
+        {% with messages= get_flashed_messages() %}
+            {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li> {{message}}</li>
+                {% endfor %}
+            </ul>    
+            {% endif %}
+        {% endwith %}
+        </center>
+        </div>
+    </body>
+</html>
