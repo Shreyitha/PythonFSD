@@ -1,6 +1,6 @@
 from flask import Flask,render_template,flash,request,redirect,url_for
 app = Flask(__name__)
-app.secret_key = "flaskonlinecalculator"
+app.secret_key = "flaskcalculator"
 
 @app.route("/")
 def home():
@@ -9,11 +9,12 @@ def home():
 def verifyinputs(num1,num2,operator):
         if (num1!="") and (num2!="") and (operator!=""):
             isok = "okay"
-            if num1.isnumeric() or num2.isnumeric():
-                isok = "okay"
-            elif float(num1) and float(num2):
-                isok = "okay"
-            else:
+            if num1.isalpha() or num2.isalpha():
+                isok = "notokay"
+            try:
+                if float(num1) and float(num2):
+                    isok = "okay"
+            except ValueError:
                 isok = "notokay"
             return isok
 
