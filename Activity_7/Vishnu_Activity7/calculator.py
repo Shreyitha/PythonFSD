@@ -8,6 +8,7 @@ def home():
 
 def verifyinputs(num1,num2,operator):
         if (num1!="") and (num2!="") and (operator!=""):
+            isok = "okay"
             if num1.isalpha() or num2.isalpha():
                 isok = "notokay"
             elif float(num1) and float(num2):
