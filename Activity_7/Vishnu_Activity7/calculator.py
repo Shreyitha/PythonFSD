@@ -1,6 +1,6 @@
 from flask import Flask,render_template,flash,request,redirect,url_for
 app = Flask(__name__)
-app.secret_key = "flaskcalculator"
+app.secret_key = "flaskonlinecalculator"
 
 @app.route("/")
 def home():
