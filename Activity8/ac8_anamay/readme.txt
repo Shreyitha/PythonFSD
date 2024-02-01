@@ -1,15 +1,15 @@
 Create By Anamay Dubey
 
-create a virtual env 
+1.create a virtual env ,In shell type -
+-virtualenv env
+-./env/Scripts/activate
+-pip install flask
+-pip install flask-sqlalchemy
 
-virtualenv env
+2.Run the app.py
+3.Click on link you see in the terminal
 
-pip install flask
-pip install flask-sqlalchemy
-
-Run the app.py
-
-if you face any error related to database
+4.If you face any error related to database
 
 - Delete db file from Instance folder
 
