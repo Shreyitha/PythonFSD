@@ -1,6 +1,6 @@
 Create By Anamay Dubey
 
-1.create a virtual env ,In shell type -
+1.create a virtual env ,In terminal type -
 -virtualenv env
 -./env/Scripts/activate
 -pip install flask
