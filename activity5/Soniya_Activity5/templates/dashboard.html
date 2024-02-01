@@ -6,12 +6,11 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>:: Dashboard ::</h1>
+    <h1> Dashboard </h1>
 
     {% with messages = get_flashed_messages() %}
     
     {% if messages %}
-
     <ul>
         {% for message in messages  %}
             <li>{{message}} </li>
@@ -21,9 +20,8 @@
     {% endif %}
 
     {% endwith %}
-
     <p style="text-align: right;"><a href="/logout">Log out</a></p>
-
+    
     <p>Hello {{username}} </p>
 
 </body>
