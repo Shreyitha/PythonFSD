@@ -1,23 +1,16 @@
 from flask import *
 
-app = Flask(__name__) # Creating our Flask Instance
+app = Flask(__name__) 
 
 @app.route('/', methods=['GET'])
 def index():
-    
-
     return render_template('index.html')
 
 @app.route('/operation_result/', methods=['POST'])
 def operation_result():
-
-    
-    # request.form looks for:
-    # html tags with matching "name= "
     first_input = request.form['Input1']  
     second_input = request.form['Input2']
     operation = request.form['operation']
-
     try:
         input1 = float(first_input)
         input2 = float(second_input)
