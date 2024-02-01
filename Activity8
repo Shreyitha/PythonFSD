@@ -1,0 +1,12 @@
+Problem Statement 8: Build a simple To-Do List web application using the Flask framework in Python
+Requirements:
+To-Do List Features:
+1. Display a list of tasks on the home page.
+2. Include options to add a new task, mark a task as complete, and delete a task.
+3. Display completed tasks with a strikethrough effect.
+- You can also add basic CSS styling to enhance the visual appeal of your To-Do List.
+Example Usage: 
+1. The user visits the home page and sees a list of tasks.
+2. The User adds a new task using the form.
+3. The User marks a task as complete, and it appears with a strikethrough effect.
+4. The User deletes a task from the list.
