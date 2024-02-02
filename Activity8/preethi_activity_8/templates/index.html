@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>To_Do_Application</title>
+</head>
+<body>
+    <h1>To Do Application</h1>
+
+    <form  method = 'post'>
+        <input type="text" name="new_task" placeholder="New task" required>
+        <input type="submit" value="Add Task">
+    </form>
+    <ul>
+        {% for task in tasks %}
+            <li class="{% if task['completed'] %}completed{% endif %}">
+                {{ task['task'] }}
+                <span>
+                    <a href="{{ url_for('complete_task', task_id=task['id']) }}">Complete</a>
+                    <a href="{{ url_for('delete_task', task_id=task['id']) }}">Delete</a>
+                </span>
+            </li>
+        {% endfor %}
+
+</body>
+</html>
