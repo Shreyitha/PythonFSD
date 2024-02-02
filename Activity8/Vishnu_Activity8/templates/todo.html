@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <title>Todolist - Simple Todolist Manager</title>
+    <meta name="author" content="Vishnu Vardhan Reddy"/>
+    <link rel="stylesheet" href="../static/style.css"/>
+</head>
+<body>
+<center>
+    <br><br> <h3>Flask Todolist Manager</h3><br>
+        <div id="displayy">
+           <div><b>Available Tasks</b>
+           {% for i in availabletasklist %}
+          <ul><br>{{ i }}</ul>
+            {% endfor %}
+            </div>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<hr>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             <div><b>Completed Tasks</b>
+           {% for i in completedtasklist %}
+          <ul><br><strike>{{ i }}</strike></ul>
+            {% endfor %}
+            </div>
+            </div>
+<br><br><br>
+{% with flashes = get_flashed_messages()%}
+    {% if flashes%}
+    {% for f in flashes %}
+    <b id="flashmessage">{{f}}</b>
+    {% endfor %}
+    {% endif %}
+    {% endwith%}
+<br><br><br>
+<div id="form">
+<form action="/todolist" method="post">
+   select operation : <select name="TOP" required>
+       <option value="">--select--</option>
+        <option value="add">Add Task</option>
+        <option value="mark">Mark as complete</option>
+        <option value="delete">Delete Task</option>
+    </select><br><br>
+ Task : <input type="text" autocomplete="off" placeholder= "Enter task name" id="task" name="TASK" required/><br><br>
+    <button type="submit">Submit</button>
+</form>
+</div>
+</center>
+    </body>
+</html>
