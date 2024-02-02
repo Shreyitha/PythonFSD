@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        li {
+            background-color: #fff;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .completed {
+            text-decoration: line-through;
+            color: #565454;
+        }
+
+        form {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        label {
+            margin-right: 10px;
+        }
+
+        input[type="text"] {
+            padding: 8px;
+            width: 60%;
+        }
+
+        button {
+            padding: 8px;
+            background-color: #f163f3;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>To-Do List</h1>
+    <ul>
+        {% for task in tasks %}
+            <li class="{% if task.complete %}completed{% endif %}">
+                {{ task.content }}
+                <a href="{{ url_for('complete_task', task_id=loop.index0) }}">Mark as Complete</a>
+                <a href="{{ url_for('delete_task', task_id=loop.index0) }}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <form action="{{ url_for('add_task') }}" method="post">
+        <label for="task">New Task:</label>
+        <input type="text" id="task" name="task" required>
+        <button type="submit">Add Task</button>
+    </form>
+</body>
+</html>
