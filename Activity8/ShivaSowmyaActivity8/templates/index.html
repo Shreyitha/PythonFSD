@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <style>
+    .container
+    {
+        justify-content:center;   
+        margin: 70px;
+        border: 2px solid blueviolet ;
+        background-color: midnightblue;
+        padding: 4%;
+    }
+
+    input
+    {
+        padding: 8px;
+        width: 60%;
+    }
+
+    button 
+    {
+        padding: 8px;
+        background-color:rgba(126, 252, 0, 0.63);
+        color: #fff;
+        border: 2px solid lawngreen;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+    .incomplete
+    {
+        text-decoration: line-through;
+    }
+    table 
+    {
+        
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th 
+    {
+        
+        border: 3px solid#a8a8e2;
+        text-align: left;
+        padding: 8px;
+        
+    }
+    h1
+    {
+        color:lavenderblush;
+        font-family: monospace;
+    }
+    tr:nth-child(even) 
+    {
+        background-color:seashell;
+        color:black;
+        font-family:fantasy;
+    }
+    tr:nth-child(odd) 
+    {
+        background-color:mistyrose;
+        color:black;
+        font-family: fantasy;
+    }
+    
+  </style>
+  <body>
+    
+        <div class="container">
+            <center><h1>To - Do List</h1></center>
+            <table border="1">
+                {%for task in task_list%}
+                <tr>
+                    {%if task.status=='incomplete'%}
+                    <td><p>{{task["data"]}}</p></td>
+                    <td><a href="{{ url_for('complete_task', index=loop.index0) }}">mark as complete</a></td>
+                    <td><a href="{{ url_for('delete_task', index=loop.index0) }}">delete</a></td>
+
+                    {%endif%}
+                    {%if task.status=='complete'%}
+                    <td><p class="incomplete">{{task["data"]}}</p></td>
+                    <td><a class="incomplete">mark as complete</a></td>
+                    <td><a href="{{ url_for('delete_task', index=loop.index0) }}">delete</a></td>
+
+                    {%endif%}
+                </tr>
+                {%endfor%} 
+            </table>
+
+        </div>
+        <br>
+        <br>
+        <center>
+            <div>
+                <form action="/add_task" method="post">
+                <input type="text" placeholder="enter new task" name="newtask">
+                <button type="submit" class="add_btn">Add</button>
+                </form>
+            </div>
+        </center>
+        
+  </body>
+</html>
