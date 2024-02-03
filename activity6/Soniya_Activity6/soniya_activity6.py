@@ -16,7 +16,7 @@ if response.status_code == 200:
         price = book.find(class_='price_color').text
         data.append({'name': name, 'price': price})
     
-    with open('saksha.csv', 'w', newline='') as file:
+    with open('soniya.csv', 'w', newline='') as file:
         writer = csv.DictWriter(file, fieldnames=['name', 'price'])
         writer.writeheader()
         
